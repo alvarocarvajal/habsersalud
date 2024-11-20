@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+Esta es una regla CSS muy común que se usa para "resetear" algunos estilos predeterminados de los navegadores y evitar inconsistencias en 
+la apariencia de los elementos. Aquí se explica cada parte:
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* {: El * es el selector universal en CSS. Significa que las reglas dentro de este bloque se aplicarán a todos los elementos del documento HTML.
+Esto ayuda a establecer estilos básicos para todos los elementos de una vez.
+
+* margin: 0;: Elimina el margen predeterminado que algunos navegadores aplican a ciertos elementos, como los párrafos (<p>) o encabezados (<h1>).
+Esto ayuda a reducir los espacios externos no deseados entre los elementos y a crear un diseño más uniforme.
+
+* padding: 0;: Similar al margen, elimina el relleno interno predeterminado de todos los elementos. Esto evita que haya espacio adicional 
+dentro de los elementos, como dentro de un botón o cuadro de texto.
+
+* box-sizing: border-box;: Cambia el modelo de caja para todos los elementos a border-box. Esto significa que, al establecer el ancho (width) 
+o alto (height) de un elemento, el valor incluirá los bordes y el relleno del elemento. Este ajuste facilita controlar el tamaño final de los 
+elementos en la página y evita que crezcan inesperadamente al agregar relleno o bordes.
+
+* outline: none;: Elimina el contorno de enfoque que algunos navegadores aplican automáticamente a elementos interactivos, como cuadros de 
+texto y botones, cuando están enfocados. Esto es útil para mantener un aspecto más limpio, aunque es recomendable proporcionar algún otro 
+estilo de enfoque para mejorar la accesibilidad.
+
+Este "reset" CSS es común en el diseño web para evitar inconsistencias entre navegadores y tener un punto de partida limpio.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: #f0f0f0;
+}
+
+Este fragmento de código CSS aplica estilos específicos al elemento <body> de una página web, afectando así el diseño global del sitio.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* body {: Selecciona el elemento <body>, que es el contenedor principal del contenido en la página web. Las reglas dentro de este bloque se 
+aplicarán a todo el contenido de la página.
+
+* font-family: 'Poppins', sans-serif;: Especifica la fuente utilizada para el texto en la página. En este caso, se usa la fuente "Poppins". 
+Si "Poppins" no está disponible en el dispositivo del usuario, el navegador usará cualquier fuente genérica de la familia sans-serif 
+(fuentes sin serifas o adornos).
+
+* background-color: #111;: Establece el color de fondo del <body> en un tono muy oscuro (casi negro), representado por el valor hexadecimal #111.
+Esto da una apariencia moderna y elegante, especialmente en combinación con texto claro.
+
+* color: #f0f0f0;: Define el color del texto principal en un tono claro (un blanco suave), representado por #f0f0f0. Este contraste con el 
+fondo oscuro mejora la legibilidad del texto y crea una estética de "modo oscuro".
+
+En conjunto, estos estilos crean una apariencia visual coherente y moderna para la página, con un texto claro sobre un fondo oscuro y una 
+fuente personalizada que contribuye a la identidad visual del sitio.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+header {
+    background-color: transparent;
+    padding: 20px 50px;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+Este fragmento de código CSS define el estilo para el elemento <header> de una página web. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* header {: Selecciona el elemento <header>, que normalmente contiene la barra de navegación o encabezado de una página.
+
+* background-color: transparent;: Establece el color de fondo del <header> como transparente, lo que permite que cualquier contenido o fondo 
+detrás de él sea visible.
+
+* padding: 20px 50px;: Agrega un espacio de 20 píxeles en la parte superior e inferior, y 50 píxeles en los lados. Este relleno ayuda a separar 
+el contenido del borde del <header> y mejorar su apariencia.
+
+* width: 100%;: Establece el ancho del <header> para que ocupe todo el ancho de la ventana. Esto asegura que el <header> cubra la parte superior 
+de la pantalla de borde a borde.
+
+* top: 0;: Fija el <header> en la parte superior de la ventana. Generalmente, se usa en combinación con position: fixed o position: absolute 
+para mantener el <header> visible en la parte superior de la pantalla, incluso cuando se desplaza.
+
+* z-index: 1000;: Aumenta la prioridad del <header> en el "eje Z" (eje de profundidad), de modo que se superponga a otros elementos con valores 
+de z-index más bajos. Esto es útil si el <header> debe quedar siempre visible encima de otros elementos.
+
+* transition: background-color 0.3s;: Define una transición de 0.3 segundos para los cambios en el background-color. Esto significa que si el 
+color de fondo cambia (por ejemplo, al desplazarse), el cambio se verá como una animación suave en lugar de un cambio brusco.
+
+Este conjunto de estilos le da al <header> una apariencia limpia y moderna, con un efecto de transición suave que mejora la experiencia del 
+usuario.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+Este fragmento de código CSS aplica estilos al contenedor dentro del <header>, generalmente utilizado para organizar y alinear los elementos 
+dentro del encabezado (como el logo y la barra de navegación).
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* header .container {: Selecciona el elemento con la clase .container dentro del <header>. Esto permite aplicar los estilos solo a ese contenedor
+específico, que normalmente es un div que envuelve los elementos dentro del encabezado (como logo, navegación, etc.).
+
+* display: flex;: Aplica el modelo de diseño Flexbox al contenedor, lo que facilita la alineación y distribución de los elementos dentro de este 
+contenedor. Flexbox permite organizar los elementos de manera más flexible y controlada.
+
+* justify-content: space-between;: Distribuye los elementos dentro del contenedor de manera que haya el máximo espacio posible entre ellos. 
+El primer elemento se alinea al principio del contenedor, el último al final, y los elementos intermedios se distribuyen equidistantemente.
+
+* align-items: center;: Alinea todos los elementos dentro del contenedor verticalmente en el centro. Esto asegura que, si hay una diferencia de 
+altura entre los elementos, todos se alinearán de forma que sus centros verticales coincidan.
+
+En resumen, este conjunto de estilos usa Flexbox para organizar los elementos dentro del contenedor del encabezado, distribuyéndolos de manera 
+eficiente y centrada, lo que generalmente se utiliza para que el logo y los enlaces de navegación se vean bien alineados en una barra de 
+navegación.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+header .logo img { 
+    max-width: 120px;
+    border-radius: 50%;
+    border: 2px solid #f0f0f0;
+    transition: transform 0.3s;
+    transform: scale(0.8);
+}
+
+Este fragmento de código CSS se aplica a la imagen dentro de un contenedor con la clase .logo dentro del <header>. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* header .logo img {: Selecciona las imágenes dentro del contenedor .logo en el <header>. Este selector específico asegura que solo las imágenes
+del logo tengan estos estilos aplicados.
+
+* max-width: 120px;: Limita el ancho máximo de la imagen a 120 píxeles. Esto asegura que la imagen nunca sea más grande que 120 píxeles de ancho,
+pero permite que sea más pequeña si el espacio disponible lo requiere.
+
+* border-radius: 50%;: Aplica un radio de borde del 50%, lo que convierte la imagen en un círculo si la imagen tiene una forma cuadrada. 
+Si la imagen es rectangular, esta propiedad hará que las esquinas sean redondeadas, pero la forma será más parecida a un óvalo.
+
+* border: 2px solid #f0f0f0;: Define un borde de 2 píxeles de grosor, con un color blanco suave (#f0f0f0). 
+Esto rodea la imagen con un contorno sutil que puede ayudar a destacarla visualmente.
+
+* transition: transform 0.3s;: Aplica una transición suave a la propiedad transform, que durará 0.3 segundos. 
+Esto significa que cualquier cambio en la transformación de la imagen (por ejemplo, si se aplica un efecto de escala) ocurrirá de manera gradual 
+en lugar de un cambio brusco.
+
+* transform: scale(0.8);: Aplica una transformación que reduce el tamaño de la imagen al 80% de su tamaño original. Esto hace que el logo sea 
+ligeramente más pequeño que su tamaño real, tal vez para encajar mejor en el diseño del encabezado.
+
+En resumen, este conjunto de estilos asegura que la imagen del logo sea redonda, tenga un borde visible, y tenga un tamaño adecuado 
+(hasta 120px de ancho). Además, la imagen se reduce un poco en tamaño por defecto y puede aumentar o disminuir suavemente si se aplica algún 
+efecto (como al pasar el ratón sobre ella).
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+header .logo img:hover {
+    transform: rotate(360deg);
+}
+
+Este fragmento de código CSS aplica un efecto de rotación a la imagen del logo cuando el mouse pasa por encima de ella. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* header .logo img:hover {: Este selector aplica estilos cuando el cursor pasa sobre la imagen dentro del contenedor con la clase .logo en el 
+<header>. El pseudo-clase :hover se activa cuando el mouse está sobre el elemento.
+
+* transform: rotate(360deg);: Aplica una transformación a la imagen que la rota 360 grados en el sentido de las agujas del reloj. La rotación es 
+un valor de grados, donde 360deg significa una vuelta completa. Esto hace que la imagen gire completamente.
+
+El comentario dentro de las llaves señala que la transición definida anteriormente (en la propiedad transition dentro de header .logo img) hará 
+que la rotación suceda de manera suave en un período de 0.3 segundos, en lugar de ocurrir bruscamente.
+
+***Resumen:***
+Este estilo crea un efecto de rotación en la imagen del logo cuando el usuario pasa el mouse por encima. La transición definida previamente 
+suaviza el cambio, haciendo que la rotación sea más atractiva visualmente.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+Este fragmento de código CSS aplica estilos al elemento <ul> dentro de un <nav>, que generalmente contiene una lista de enlaces de navegación.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* nav ul {: Este selector selecciona el elemento <ul> dentro de un contenedor <nav>, que es donde generalmente se encuentra la lista de elementos
+ de navegación (por ejemplo, enlaces).
+
+* list-style: none;: Elimina el estilo predeterminado de la lista. Normalmente, los elementos <ul> tienen viñetas (puntos) o números como estilo 
+de lista por defecto. Esta propiedad elimina esos puntos para hacer que la lista se vea más limpia y moderna, sin marcas.
+
+* display: flex;: Aplica Flexbox al contenedor <ul>. Esto permite que los elementos <li> dentro de la lista se alineen de manera más controlada y
+flexible en una fila (horizontalmente, por defecto). Flexbox facilita la distribución de los elementos y su alineación.
+
+* gap: 30px;: Define un espacio de 30 píxeles entre cada uno de los elementos dentro del <ul>. El gap es una propiedad muy útil en Flexbox, ya 
+que asegura que los elementos estén separados uniformemente sin necesidad de aplicar márgenes manualmente a cada elemento individual.
+
+***En resumen:***
+Este conjunto de estilos organiza los elementos dentro de la lista de navegación en una fila horizontal, elimina los puntos de lista 
+predeterminados y asegura que haya un espacio consistente entre cada enlace o ítem de navegación, mejorando la estética y la usabilidad. 
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+nav ul li a {
+    text-decoration: none;
+    color: #f0f0f0;
+    font-weight: 500;
+    font-size: 18px;
+    position: relative;
+    transition: color 0.7s;
+}
+
+Este fragmento de código CSS aplica estilos a los enlaces (<a>) dentro de una lista de navegación (<nav>).
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* nav ul li a {: Este selector aplica los estilos a todos los enlaces <a> dentro de elementos <li>, que están dentro de un <ul> dentro de un 
+<nav>. Es decir, a los enlaces de navegación.
+
+* text-decoration: none;: Elimina el subrayado que los navegadores aplican por defecto a los enlaces. Esto hace que los enlaces se vean más 
+limpios y modernos sin el subrayado.
+
+* color: #f0f0f0;: Establece el color del texto de los enlaces a un blanco suave (el valor #f0f0f0). Este color es ideal para un contraste suave 
+con un fondo oscuro.
+
+* font-weight: 500;: Define el grosor de la fuente. El valor 500 es una opción intermedia entre una fuente normal (400) y una negrita (700). 
+Esto le da un peso moderado a la tipografía.
+
+* font-size: 18px;: Establece el tamaño del texto del enlace en 18 píxeles. Este tamaño es adecuado para una navegación legible y accesible.
+
+* position: relative;: Establece que el enlace tiene una posición relativa. Esto es útil si deseas aplicar posicionamiento absoluto dentro del 
+enlace más adelante o usarlo para crear efectos adicionales (por ejemplo, con pseudo-elementos).
+
+* transition: color 0.7s;: Aplica una transición suave de 0.7 segundos cuando el color del texto cambie. Esto generalmente se usa cuando los 
+enlaces tienen un efecto visual cuando el usuario pasa el mouse sobre ellos (por ejemplo, cambiar de color).
+
+***Resumen:***
+Este conjunto de estilos da a los enlaces de navegación un diseño limpio y moderno, sin subrayado, con un color de texto suave y un tamaño 
+adecuado. Además, incluye una transición suave en el color del texto, lo que mejora la experiencia visual del usuario cuando interactúa con los 
+enlaces (como al pasar el mouse sobre ellos).
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+nav ul li a::before {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #da8787;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s;
+}
+
+Este fragmento de código CSS aplica un pseudo-elemento ::before a los enlaces dentro de la lista de navegación (<nav>). El pseudo-elemento crea 
+una línea debajo de los enlaces que se mostrará con una animación cuando el mouse pase sobre el enlace.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* nav ul li a::before {: Selecciona el pseudo-elemento ::before que se aplica a los enlaces dentro de la lista de navegación. Este 
+pseudo-elemento se utiliza para crear contenido adicional antes del contenido real del enlace.
+
+* content: "";: Define el contenido del pseudo-elemento como vacío, lo que significa que no contiene texto. Se usa para generar un efecto visual,
+en este caso, una línea debajo del enlace.
+
+* position: absolute;: Establece que el pseudo-elemento tiene una posición absoluta, lo que significa que se coloca con respecto al primer 
+contenedor de posición relativa (en este caso, el propio enlace).
+
+* bottom: -5px;: Coloca el pseudo-elemento 5 píxeles por debajo del enlace. Esto asegura que la línea aparezca justo debajo del texto del enlace.
+
+* left: 0;: Alinea el pseudo-elemento al borde izquierdo del enlace. Esto asegura que la línea se estire de izquierda a derecha, de acuerdo con 
+el tamaño del enlace.
+
+* width: 100%;: Establece el ancho del pseudo-elemento al 100% del ancho del enlace, de modo que la línea cubra todo el ancho del enlace.
+
+* height: 3px;: Establece la altura de la línea en 3 píxeles, lo que la hace lo suficientemente visible, pero discreta.
+
+* background-color: #da8787;: Define el color de fondo de la línea como un tono rosado claro (#da8787).
+
+* transform: scaleX(0);: Inicialmente, el pseudo-elemento tiene una escala horizontal (scaleX) de 0, lo que significa que la línea está oculta. 
+Esto es lo que crea el efecto de "animación" cuando el mouse pasa sobre el enlace.
+
+* transform-origin: left;: Establece el origen de la transformación en el borde izquierdo de la línea. Esto significa que la animación de 
+aparición de la línea se expandirá de izquierda a derecha.
+
+* transition: transform 0.4s;: Aplica una transición suave a la propiedad transform, que durará 0.4 segundos. Esto asegura que la línea se 
+"dibuje" suavemente cuando el mouse pase sobre el enlace.
+
+***Resumen:***
+Este conjunto de estilos crea una línea de color rosado debajo de los enlaces de navegación, que inicialmente está oculta. Cuando el mouse pasa 
+sobre el enlace, la línea se expande de izquierda a derecha gracias a la animación de transformación, logrando un efecto visual atractivo y 
+dinámico.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+nav ul li a:hover {
+    color: #da8787;
+}
+
+Este fragmento de código CSS aplica un estilo a los enlaces de navegación cuando el usuario pasa el cursor sobre ellos. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* nav ul li a:hover {: Este selector se activa cuando el cursor pasa sobre un enlace (<a>) dentro de un elemento de lista (<li>) dentro de un 
+contenedor <ul> dentro de un <nav>. La pseudo-clase :hover se utiliza para aplicar un estilo al elemento cuando el usuario interactúa con él, en 
+este caso, al pasar el mouse sobre el enlace.
+
+* color: #da8787;: Cambia el color del texto del enlace a un tono rosado (#da8787) cuando el mouse está sobre el enlace. Esto proporciona un 
+efecto visual que resalta el enlace cuando el usuario interactúa con él.
+
+***Resumen:***
+Este conjunto de estilos cambia el color del texto de los enlaces de navegación a un tono rosado cuando el mouse pasa sobre ellos, creando un 
+efecto de resaltado que mejora la experiencia visual del usuario al interactuar con los enlaces.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+nav ul li a:hover::before {
+    transform: scaleX(1);
+}
+
+Este fragmento de código CSS aplica un estilo al pseudo-elemento ::before de los enlaces de navegación cuando el usuario pasa el mouse sobre 
+ellos.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* nav ul li a:hover::before {: Este selector se activa cuando el cursor pasa sobre un enlace (<a>) dentro de un elemento <li> dentro de un 
+contenedor <ul> dentro de un <nav>. Se dirige específicamente al pseudo-elemento ::before del enlace, que en este caso es la línea que aparece 
+debajo del enlace.
+
+* La pseudo-clase :hover se activa cuando el usuario coloca el cursor sobre el enlace.
+El pseudo-elemento ::before es el que genera la línea debajo del enlace (según lo definido en el fragmento anterior).
+transform: scaleX(1);: Esta propiedad transforma el pseudo-elemento ::before cambiando su escala horizontal (scaleX). Cuando el valor de scaleX 
+es 1, significa que el pseudo-elemento tiene su tamaño original a lo largo del eje horizontal, es decir, la línea que estaba oculta 
+(con scaleX(0)) se expande completamente para cubrir el 100% del ancho del enlace.
+
+***Resumen:***
+Este estilo hace que, cuando el mouse pasa sobre el enlace, el pseudo-elemento ::before (la línea debajo del enlace) se expanda de manera suave 
+desde un tamaño de 0 hasta su tamaño original (scaleX(1)), gracias a la transición definida anteriormente. Esto crea un efecto visual atractivo 
+donde la línea se dibuja de izquierda a derecha.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+.header-icons a {
+    color: #f0f0f0;
+    margin-left: 20px;
+    font-size: 22px;
+    transition: color 0.3s;
+}
+
+Este fragmento de código CSS aplica estilos a los enlaces (<a>) dentro de un contenedor con la clase .header-icons.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* .header-icons a {: Este selector selecciona todos los enlaces (<a>) que están dentro de un contenedor con la clase .header-icons. Usualmente, 
+esta clase se usa para agrupar iconos de redes sociales o enlaces de acción en un encabezado o barra de navegación.
+
+* color: #f0f0f0;: Establece el color del texto de los enlaces a un blanco suave (#f0f0f0). Este color es apropiado para un contraste suave en 
+un fondo oscuro o de color diferente.
+
+* margin-left: 20px;: Aplica un margen izquierdo de 20 píxeles a cada enlace. Esto asegura que los enlaces estén separados unos de otros, 
+especialmente si están alineados horizontalmente, para darles espacio visual y mejorar la legibilidad.
+
+* font-size: 22px;: Define el tamaño de la fuente de los enlaces a 22 píxeles, lo que generalmente es un buen tamaño para iconos o enlaces de 
+acción en un encabezado, asegurando que sean fácilmente visibles.
+
+* transition: color 0.3s;: Aplica una transición suave de 0.3 segundos a la propiedad color. Esto significa que cualquier cambio en el color del 
+enlace se realizará de manera gradual, lo que mejora la experiencia visual cuando el usuario interactúa con el enlace (por ejemplo, al pasar el 
+ratón sobre él).
+
+***Resumen:***
+Este conjunto de estilos define la apariencia de los enlaces dentro de un contenedor de iconos en el encabezado. Les da un color suave, los 
+separa con márgenes, establece un tamaño de fuente adecuado y aplica una transición para un cambio gradual en el color cuando se interactúa con 
+ellos. Este estilo es ideal para elementos de navegación o botones interactivos.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+.header-icons a:hover {
+    color: #da8787;
+}
+
+Este fragmento de código CSS aplica un estilo a los enlaces dentro de .header-icons cuando el cursor pasa sobre ellos. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* .header-icons a:hover {: Este selector se aplica a los enlaces (<a>) dentro de un contenedor con la clase .header-icons cuando el cursor pasa 
+sobre el enlace, gracias a la pseudo-clase :hover.
+
+* color: #da8787;: Cambia el color del texto del enlace a un tono rosado (#da8787) cuando el mouse pasa sobre el enlace. Esto proporciona un 
+efecto visual de resaltado, haciendo que el enlace se vea más destacado y sea más fácil de identificar para el usuario.
+
+***Resumen:***
+Este estilo cambia el color de los enlaces dentro de .header-icons a un tono rosado cuando el usuario pasa el mouse sobre ellos, creando un 
+efecto de resaltado que mejora la interacción visual y la experiencia del usuario.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #da8787, #111);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    color: #f0f0f0;
+}
+
+Este fragmento de código CSS aplica estilos al contenedor con la clase .hero, que suele ser una sección destacada en una página web, a menudo 
+utilizada para mostrar un mensaje de bienvenida o un título principal.
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* .hero {: Este selector aplica los estilos al elemento con la clase .hero, que típicamente representa una sección prominente en la página, como 
+un "hero section" que podría contener un título o una imagen de fondo llamativa.
+
+* height: 100vh;: Establece la altura del contenedor al 100% de la altura de la ventana del navegador (100vh significa "100% del alto de la 
+ventana del navegador"). Esto asegura que la sección ocupe toda la pantalla visible.
+
+* background: linear-gradient(135deg, #da8787, #111);: Aplica un gradiente lineal como fondo de la sección. El gradiente va de un tono rosado 
+claro (#da8787) a un negro oscuro (#111) a un ángulo de 135 grados, creando un efecto visual suave y elegante.
+
+* display: flex;: Utiliza Flexbox, un modelo de diseño que facilita la alineación de los elementos dentro del contenedor.
+
+* align-items: center;: Alinea verticalmente los elementos dentro del contenedor en el centro de la altura del contenedor.
+
+* justify-content: center;: Alinea horizontalmente los elementos dentro del contenedor en el centro de la anchura del contenedor.
+
+* text-align: center;: Asegura que el texto dentro del contenedor esté centrado horizontalmente.
+
+* padding: 0 20px;: Aplica un relleno horizontal de 20 píxeles (a izquierda y derecha) al contenedor. Esto asegura que el contenido no toque los 
+bordes del contenedor.
+
+* color: #f0f0f0;: Establece el color del texto dentro del contenedor a un blanco suave (#f0f0f0), lo que proporciona un buen contraste sobre el 
+fondo oscuro.
+
+***Resumen:***
+Este conjunto de estilos define una sección destacada en la página que ocupa toda la altura de la ventana del navegador (100vh). Utiliza Flexbox 
+para centrar el contenido tanto horizontal como verticalmente, y aplica un gradiente de color atractivo como fondo. El texto dentro de esta 
+sección está centrado y tiene un color claro para destacarse sobre el fondo oscuro. Es ideal para una sección hero en la página de inicio.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+Este fragmento de código CSS aplica estilos al encabezado <h1> dentro de un contenedor con la clase .hero. 
+
+====================================
+Explicación detallada de cada línea:
+====================================
+
+* .hero h1 {: Este selector aplica los estilos al elemento <h1> dentro de un contenedor con la clase .hero. Esto asegura que solo el encabezado 
+principal dentro de esa sección obtenga estos estilos.
+
+* font-size: 48px;: Establece el tamaño de la fuente del encabezado <h1> a 48 píxeles, lo que lo hace prominente y adecuado para un título 
+principal en una sección destacada como la .hero.
+
+* font-weight: 700;: Establece el grosor de la fuente a 700, lo que corresponde a negrita. Esto ayuda a que el texto se vea más fuerte y resalte 
+como un encabezado importante.
+
+* margin-bottom: 20px;: Aplica un margen inferior de 20 píxeles al encabezado <h1>, lo que crea un espacio entre el encabezado y los elementos 
+que lo siguen dentro de la misma sección. Esto mejora la legibilidad y mantiene el diseño organizado.
+
+***Resumen:***
+Este estilo ajusta la apariencia del encabezado principal dentro de la sección .hero, asegurando que el título sea grande (48px), negrita (700), 
+y que haya un espacio adecuado debajo de él (20px) para mejorar la presentación y legibilidad. Este tipo de estilo es común en la primera 
+sección de una página web para captar la atención del usuario.
+
+*************************************************************************************************************************************************
+*************************************************************************************************************************************************
+

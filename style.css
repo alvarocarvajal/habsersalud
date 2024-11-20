@@ -1,0 +1,399 @@
+/*Este código es una regla CSS @import que se utiliza para importar una fuente web desde Google Fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/*Este bloque de código es CSS y se usa para aplicar estilos básicos a todos los elementos de la página. */
+* {                         /* Selecciona todos los elementos en el documento */
+    margin: 0;              /* Establece el margen externo de todos los elementos en 0 (sin espacio adicional) */
+    padding: 0;             /* Establece el relleno interno de todos los elementos en 0 (sin espacio interno) */
+    box-sizing: border-box; /* Cambia el modelo de caja para incluir bordes y relleno en el ancho/alto especificados */
+    outline: none;          /* Elimina los bordes de contorno que aparecen al enfocar algunos elementos */
+}
+
+/*Este fragmento de código CSS aplica estilos específicos al elemento <body> de una página web, afectando así el diseño global del sitio.*/
+body {                                      /* Selecciona el elemento <body>, que es el contenedor principal del contenido de la página */
+    font-family: 'Poppins', sans-serif;     /* Establece la fuente principal para el texto en la página */
+    background-color: #111;               /* Define el color de fondo del <body> en un tono muy oscuro (casi negro) */
+    color: #f0f0f0;                       /* Define el color del texto en un tono claro (blanco suave) */
+}
+
+/* Este fragmento de código CSS define el estilo para el elemento <header> de una página web.*/
+header {                                    /* Selecciona el elemento <header>, generalmente utilizado para el encabezado de la página */
+    background-color: transparent;          /* Define el color de fondo del <header> como transparente */
+    padding: 20px 50px;                     /* Agrega un relleno de 20px arriba y abajo, y 50px a los lados del <header> */
+    width: 100%;                            /* Establece el ancho del <header> para que ocupe el 100% del ancho de la ventana */
+    top: 0;                                 /* Fija el <header> en la parte superior de la ventana (se suele usar junto con position: fixed) */
+    z-index: 1000;                          /* Da al <header> una prioridad alta en el "eje Z" para que quede encima de otros elementos */
+    transition: background-color 0.3s;      /* Aplica una transición suave de 0.3 segundos cuando cambia el color de fondo del <header> */
+}
+
+/*Este fragmento de código CSS aplica estilos al contenedor dentro del <header>, generalmente utilizado para organizar y alinear los elementos dentro del 
+encabezado (como el logo y la barra de navegación).*/
+header .container {                         /* Selecciona el elemento con la clase "container" dentro del <header> */
+    display: flex;                          /* Establece el diseño de los elementos dentro de <header> usando Flexbox */
+    justify-content: space-between;         /* Distribuye los elementos dentro del contenedor con el máximo espacio posible entre ellos */
+    align-items: center;                    /* Alinea los elementos verticalmente en el centro del contenedor */
+}
+
+/*Este fragmento de código CSS se aplica a la imagen dentro de un contenedor con la clase .logo dentro del <header>.*/
+header .logo img {                     /* Selecciona cualquier imagen (<img>) que esté dentro de un elemento con la clase 'logo', que a su vez está dentro
+                                       de un elemento 'header'. Es una forma de aplicar estilos específicos solo al logo dentro del encabezado de la página. */
+       
+    max-width: 80px;                   /* Define el ancho máximo de la imagen en 60 píxeles. Esto significa que, independientemente del tamaño original 
+                                       de la imagen, se escalará a un máximo de 60 píxeles de ancho. Esto ayuda a mantener el logo de un tamaño controlado. */
+       
+    border-radius: 25%;                /* Redondea los bordes de la imagen. Al establecer un valor de 50%, se asegura que cualquier imagen cuadrada se 
+                                       muestre en forma de círculo. Para una imagen rectangular, la forma se aproximará a un óvalo.
+                                       Es un truco común para hacer que las imágenes parezcan circulares. */
+       
+    border: 2px solid #f0f0f0;       /* Agrega un borde de 2 píxeles de grosor alrededor de la imagen. El color del borde es #f0f0f0, que es un tono 
+                                       gris claro, lo que le da al logo un borde sutil y elegante. */
+       
+    transition: transform 0.3s;        /* Establece una transición de 0.3 segundos para cualquier cambio en la propiedad 'transform'.
+                                       Esto crea una animación suave si, por ejemplo, aplicamos una transformación como 'scale' o 'rotate' al logo. 
+                                       Sin embargo, este código solo define la duración de la transición, no la transforma por sí misma. */
+
+    height: auto;
+
+    /* Efecto que agranda el circulo cuando lo selecciona con el mouse*/
+    /*transform: scale(0.8);           /* Reduce la imagen al 80% de su tamaño dentro del círculo */
+}
+
+/*Estilo par que el logo gire 360° cuando el mouse lo seleccione*/
+header .logo img:hover {           /* Aplica estilos cuando el cursor pasa por encima de la imagen dentro del header */
+    
+    transform: rotate(360deg);     /* Rota la imagen 360 grados en el sentido de las agujas del reloj.
+                                   Gracias a la propiedad 'transition' que definimos antes, esta rotación ocurrirá
+                                   suavemente en 0.3 segundos. */
+}
+
+/*Este fragmento de código CSS aplica estilos al elemento <ul> dentro de un <nav>, que generalmente contiene una lista de enlaces de navegación. */
+nav ul {                           /* Selecciona el elemento <ul> dentro de un <nav> */
+    list-style: none;              /* Elimina los puntos de lista (o cualquier otro estilo de lista) */
+    display: flex;                 /* Aplica el modelo de diseño Flexbox al <ul>, permitiendo un diseño más flexible */
+    gap: 30px;                     /* Agrega un espacio de 30 píxeles entre los elementos dentro del <ul> */
+}
+
+/*Este fragmento de código CSS aplica estilos a los enlaces (<a>) dentro de una lista de navegación (<nav>).*/
+nav ul li a {                       /* Selecciona los enlaces <a> dentro de los elementos <li> en el <ul> dentro de <nav> */
+    text-decoration: none;          /* Elimina el subrayado predeterminado de los enlaces */
+    color: #f0f0f0;               /* Establece el color del texto del enlace a un tono blanco suave (#f0f0f0) */
+    font-weight: 500;               /* Establece el grosor de la fuente a 500, lo que da un estilo semi-negrita */
+    font-size: 18px;                /* Define el tamaño de la fuente a 18 píxeles */
+    position: relative;             /* Establece la posición del enlace como "relativa" para que pueda ser referenciada para posicionamiento absoluto dentro de su contenedor */
+    transition: color 0.7s;         /* Aplica una transición suave al color del texto, que durará 0.7 segundos cuando cambie */
+}
+
+/*Este fragmento de código CSS aplica un pseudo-elemento ::before a los enlaces dentro de la lista de navegación (<nav>). El pseudo-elemento crea una 
+línea debajo de los enlaces que se mostrará con una animación cuando el mouse pase sobre el enlace.*/
+nav ul li a::before {                /* Selecciona el pseudo-elemento ::before de los enlaces dentro de la lista de navegación */
+    content: "";                     /* Define el contenido del pseudo-elemento. En este caso, está vacío porque solo se usa para efectos visuales */
+    position: absolute;              /* Establece la posición del pseudo-elemento como absoluta, en relación con el contenedor del enlace */
+    bottom: -5px;                    /* Coloca el pseudo-elemento 5 píxeles por debajo del enlace */
+    left: 0;                         /* Alinea el pseudo-elemento al borde izquierdo del enlace */
+    width: 100%;                     /* Establece el ancho del pseudo-elemento al 100% del ancho del enlace */
+    height: 3px;                     /* Define la altura de la línea en 3 píxeles */
+    background-color: #da8787;     /* Establece el color de fondo de la línea (un tono rosado) */
+    transform: scaleX(0);            /* Inicialmente, establece la escala horizontal del pseudo-elemento en 0 (lo oculta) */
+    transform-origin: left;          /* Define el origen de la transformación en el borde izquierdo, lo que hace que la animación se inicie desde ese punto */
+    transition: transform 0.4s;      /* Aplica una transición suave a la propiedad transform en 0.4 segundos */
+}
+
+/*Este fragmento de código CSS aplica un estilo a los enlaces de navegación cuando el usuario pasa el cursor sobre ellos.*/ 
+nav ul li a:hover {                 /* Selecciona los enlaces <a> dentro de <li> en <ul> en <nav> cuando el cursor pasa sobre ellos */
+    color: #da8787;               /* Cambia el color del texto del enlace a un tono rosado (#da8787) cuando se activa el hover */
+}
+
+/*Este fragmento de código CSS aplica un estilo al pseudo-elemento ::before de los enlaces de navegación cuando el usuario pasa el mouse sobre ellos.*/
+nav ul li a:hover::before {        /* Selecciona el pseudo-elemento ::before del enlace cuando el cursor pasa sobre él */
+    transform: scaleX(1);          /* Cambia la transformación para que la línea de fondo se expanda a su tamaño original */
+}
+
+/*Este fragmento de código CSS aplica estilos a los enlaces (<a>) dentro de un contenedor con la clase .header-icons.*/
+.header-icons a {                  /* Selecciona los enlaces <a> dentro de un contenedor con la clase "header-icons" */
+    color: #f0f0f0;                 /* Establece el color del texto de los enlaces a un tono blanco suave (#f0f0f0) */
+    margin-left: 20px;              /* Aplica un margen izquierdo de 20 píxeles entre los enlaces, separándolos unos de otros */
+    font-size: 22px;                /* Define el tamaño de la fuente de los enlaces a 22 píxeles */
+    transition: color 0.3s;         /* Aplica una transición suave de 0.3 segundos al color del texto cuando cambie */
+}
+
+/*Este fragmento de código CSS aplica un estilo a los enlaces dentro de .header-icons cuando el cursor pasa sobre ellos.*/
+.header-icons a:hover {           /* Selecciona los enlaces <a> dentro de .header-icons cuando el cursor pasa sobre ellos */
+    color: #da8787;             /* Cambia el color del texto de los enlaces a un tono rosado (#da8787) cuando se activa el hover */
+}
+
+/*Este fragmento de código CSS aplica estilos al contenedor con la clase .hero, que suele ser una sección destacada en una página web, a menudo utilizada 
+para mostrar un mensaje de bienvenida o un título principal.*/
+.hero {                                                         /* Selecciona el contenedor con la clase "hero" */
+    height: 100vh;                                              /* Establece la altura del contenedor al 100% de la altura de la ventana del navegador */
+    background: linear-gradient(135deg, #da8787, #111);     /* Aplica un fondo con un gradiente lineal que va del rosado (#da8787) al negro (#111), a 135 grados */
+    display: flex;                                              /* Usa el modelo de diseño flexbox para alinear los elementos dentro del contenedor */
+    align-items: center;                                        /* Alinea los elementos hijos en el centro del contenedor a lo largo del eje vertical */
+    justify-content: center;                                    /* Alinea los elementos hijos en el centro del contenedor a lo largo del eje horizontal */
+    text-align: center;                                         /* Centra el texto dentro del contenedor */
+    padding: 0 20px;                                            /* Aplica un relleno de 20 píxeles a la izquierda y derecha, sin relleno en la parte superior e inferior */
+    color: #f0f0f0;                                           /* Establece el color del texto dentro del contenedor a un blanco suave (#f0f0f0) */
+}
+
+.hero h1 {                        /* Selecciona los elementos <h1> dentro de un contenedor con la clase "hero" */
+    font-size: 48px;               /* Establece el tamaño de la fuente del encabezado <h1> a 48 píxeles */
+    font-weight: 700;              /* Define el grosor de la fuente del encabezado a 700, lo que lo hace en negrita */
+    margin-bottom: 20px;           /* Aplica un margen de 20 píxeles en la parte inferior del encabezado <h1>, separándolo de otros elementos debajo */
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #111;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+    background-color: #da8787;
+    color: #f0f0f0;
+    transform: scale(1.05);
+}
+.content {
+    padding: 0 0 20px 0;            /* Aplica un espacio de: 0 píxeles arriba del contenedor, 
+                                                             0 pixeles al lado derecho del contenedor, 
+                                                             20px abajo del contenedor, 
+                                                             0 pixeles al lado izquierdo del contenedor.*/
+
+    display: grid;              /* Define el layout del contenedor .content como una cuadrícula (grid), que permite organizar elementos en 
+                                   filas y columnas. */
+    /* display: flex; *****REVISAR ESTA OPCION***** */
+    gap: 20px;                  /* Agrega un espacio de 20 píxeles entre los elementos de la cuadrícula, en este caso, entre las imágenes. */
+    margin: 0;                  /* Establece el margen externo en 0, eliminando cualquier espacio alrededor del contenedor .content. 
+                                   Esto ayuda a asegurar que esté alineado con otros elementos. */
+   /* padding: 0;                 /* Define el padding (relleno interno) en 0, eliminando cualquier espacio adicional dentro del contenedor. 
+                                   En este caso, es redundante con el padding especificado en la primera línea. */
+}
+
+.item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Cambiado a 'contain' para que se vea completa */ 
+    border-radius: 20px;
+    transition: transform 0.3s, filter 0.3s;
+    display: block;  /* Esto elimina el espacio debajo de las imágenes ****NUEVO*****/
+}
+
+.image-0 {
+    height: 80%; /* Ajusta el porcentaje según lo que necesites */
+    object-fit: contain; /* Asegura que la imagen se ajuste a su contenedor sin recortes */
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.item:hover img {
+    transform: scale(1.05);
+    filter: brightness(0.8);
+}
+
+.text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 80%;
+    transition: background-color 0.3s;
+}
+
+h4{
+    color: white; /*Cambia el color del texto de las etiquetas <h4> a blanco.*/
+    margin-bottom: 50px;   /*Añade un margen de 20 píxeles alrededor de las etiquetas <h4>.*/
+    font-size: 50px;  /*Tamaño de la fuente ajustado.*/
+    text-align: center; /* Centra el texto */
+}
+
+img.centrar-imagen{ 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    margin-bottom: 50px;
+}
+
+p{
+    color: white;
+    margin-bottom: 50px;
+    text-align: justify; /* Justifica el texto */
+    margin-left: 10px; /* Margen en el lado izquierdo */ 
+    margin-right: 10px; /* Margen en el lado derecho */
+}
+
+.text h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.text a {
+    color: #da8787;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 18px;
+}
+
+.text a:hover {
+    text-decoration: underline;
+}
+
+/*nuevo*/
+.footer {
+    background: linear-gradient(45deg, #000000, #da8787);
+    color: #fff;
+    padding: 3rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 1rem;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.footer-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #f1c40f;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.contact-info p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom { 
+    background-color: #333; /* Color de fondo */ 
+    color: white; /* Color del texto */ 
+    text-align: center; /* Centrar el texto */ 
+    padding: 20px 0; /* Espaciado interno */ 
+    bottom: 0; /* Pegado al fondo */ 
+    width: 100%; /* Ancho completo */ 
+} 
+    
+.footer-bottom p{ 
+    margin: 0; /* Eliminar márgenes del párrafo */ 
+    display: inline-block; /* Permitir el centrado */
+}
+
+.newsletter form {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.newsletter input[type="email"] {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter button {
+    padding: 0.5rem 1rem;
+    background-color: #f1c40f;
+    color: #2c3e50;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: #f39c12;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+    header {
+      flex-direction: column; /* Coloca los elementos en una columna */
+      text-align: center;
+    }
+  
+     @keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  } 
+}
